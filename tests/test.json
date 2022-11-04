@@ -1,0 +1,65 @@
+{
+    "insert": {
+        "Districts": [
+            {
+                "DistrictType": "DISTRICT_THING",
+                "Name": "LOC_DISTRICT_THING_NAME",
+                "PrereqTech": null,
+                "Coast": false
+            },
+            {
+                "DistrictType": "DISTRICT_ANOTHER_THING",
+                "Name": "Name without loc"
+            }
+        ],
+        "DynamicModifiers": [
+            {
+                "ModifierType": "HELLO_WORLD",
+                "EffectType": "EFFECT_GRANT_X_FREE_ENVOYS",
+                "CollectionType": "COLLECTION_PLAYERS"
+            }
+        ]
+    },
+    "update": {
+        "LocalizedText": [
+            {
+                "set": {
+                    "Text": "Testing"
+                },
+                "where": {
+                    "Language": "en_US",
+                    "Tag": ["like", "LOC_EXAMPLE_%"]
+                }
+            },
+            {
+                "set": {
+                    "Language": "en_US"
+                },
+                "where": {
+                    "Tag": "LOC_A_THING"
+                }
+            }
+        ]
+    },
+    "create": {
+        "TestingTable": {
+            "First Column": "TEXT PRIMARY KEY",
+            "SecondColumn": "INTEGER",
+            "third_column": "INTEGER AUTOINCREMENT"
+        }
+    },
+    "sql": [
+        "INSERT INTO Units (UnitType) VALUES ('UNIT_X');"
+    ],
+    "delete": {
+        "Units": "*",
+        "Types": [
+            {
+                "Type": false
+            },
+            {
+                "Type": [">", 5]
+            }
+        ]
+    }
+}
